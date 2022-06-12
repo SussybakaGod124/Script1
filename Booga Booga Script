@@ -1,0 +1,155 @@
+--Made By G O D#1937
+-- Objects
+
+local CumHub = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Jump = Instance.new("TextButton")
+local reffects = Instance.new("TextButton")
+local craftitem = Instance.new("TextBox")
+local craft = Instance.new("TextButton")
+local credits = Instance.new("TextLabel")
+
+-- Properties
+
+CumHub.Name = "Cum Hub"
+CumHub.Parent = game.Players.LocalPlayer.PlayerGui
+
+Main.Name = "Main"
+Main.Parent = CumHub
+Main.Active = true
+Main.Draggable = true
+Main.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Main.BackgroundTransparency = 0.10000000149012
+Main.BorderSizePixel = 0
+Main.ClipsDescendants = true
+Main.Position = UDim2.new(0.440909088, 0, 0.289044321, 0)
+Main.Selectable = true
+Main.Size = UDim2.new(0, 195, 0, 254)
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Title.BackgroundTransparency = 0.10000000149012
+Title.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+Title.BorderSizePixel = 4
+Title.Position = UDim2.new(0.164102569, 0, 0.0705394223, 0)
+Title.Size = UDim2.new(0, 130, 0, 41)
+Title.Font = Enum.Font.ArialBold
+Title.Text = "Cum Hub"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextScaled = true
+Title.TextSize = 14
+Title.TextWrapped = true
+
+Jump.Name = "Jump"
+Jump.Parent = Main
+Jump.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Jump.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+Jump.BorderSizePixel = 4
+Jump.Position = UDim2.new(0.164102569, 0, 0.294605821, 0)
+Jump.Size = UDim2.new(0, 56, 0, 29)
+Jump.Font = Enum.Font.ArialBold
+Jump.Text = "Infinite Jump"
+Jump.TextColor3 = Color3.new(1, 1, 1)
+Jump.TextScaled = true
+Jump.TextSize = 14
+Jump.TextWrapped = true
+
+reffects.Name = "reffects"
+reffects.Parent = Main
+reffects.Active = false
+reffects.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+reffects.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+reffects.BorderSizePixel = 4
+reffects.Position = UDim2.new(0.543589771, 0, 0.294605821, 0)
+reffects.Size = UDim2.new(0, 56, 0, 29)
+reffects.Font = Enum.Font.ArialBold
+reffects.Text = "Remove effects"
+reffects.TextColor3 = Color3.new(1, 1, 1)
+reffects.TextScaled = true
+reffects.TextSize = 14
+reffects.TextWrapped = true
+
+craftitem.Name = "craft item"
+craftitem.Parent = Main
+craftitem.Active = false
+craftitem.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+craftitem.BackgroundTransparency = 0.10000000149012
+craftitem.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+craftitem.BorderSizePixel = 4
+craftitem.Position = UDim2.new(0.200000003, 0, 0.74219954, 0)
+craftitem.Size = UDim2.new(0, 116, 0, 23)
+craftitem.Font = Enum.Font.ArialBold
+craftitem.Text = "Item To Craft Here!"
+craftitem.TextColor3 = Color3.new(1, 1, 1)
+craftitem.TextScaled = true
+craftitem.TextSize = 14
+craftitem.TextWrapped = true
+
+craft.Name = "craft"
+craft.Parent = Main
+craft.Active = false
+craft.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+craft.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+craft.BorderSizePixel = 4
+craft.Position = UDim2.new(0.225641027, 0, 0.517283678, 0)
+craft.Size = UDim2.new(0, 106, 0, 43)
+craft.Font = Enum.Font.ArialBold
+craft.Text = "Craft Item"
+craft.TextColor3 = Color3.new(1, 1, 1)
+craft.TextScaled = true
+craft.TextSize = 14
+craft.TextWrapped = true
+
+credits.Name = "credits"
+credits.Parent = Main
+credits.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+credits.BackgroundTransparency = 0.10000000149012
+credits.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+credits.BorderSizePixel = 0
+credits.Position = UDim2.new(0.0153846154, 0, 0.905511796, 0)
+credits.Size = UDim2.new(0, 114, 0, 17)
+credits.Font = Enum.Font.ArialBold
+credits.Text = "Made By EclipesX#2444"
+credits.TextColor3 = Color3.new(1, 1, 1)
+credits.TextScaled = true
+credits.TextSize = 14
+credits.TextWrapped = true
+
+-- Scripts 
+Jump.MouseButton1Down:connect(function() 
+local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+
+
+reffects.MouseButton1Down:connect(function()
+game.Lighting.FogEnd = 1200000
+game.Lighting.Brightness = 3
+game.Lighting.GlobalShadows = false	
+end)
+
+
+craft.MouseButton1Down:connect(function() 
+local item = craftitem.Text
+local CI = item
+local Event = game:GetService("ReplicatedStorage").Events.CraftItem
+Event:FireServer(CI)
+end)
